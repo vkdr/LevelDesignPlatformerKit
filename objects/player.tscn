@@ -38,6 +38,27 @@ shape = SubResource("CapsuleShape3D_gdq8c")
 
 [node name="Character" parent="." instance=ExtResource("2_nero3")]
 
+[node name="root" parent="Character/character" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.128627, 9.02389e-17)
+
+[node name="leg-left" parent="Character/character/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.733095, 0.680126, 0, -0.680126, 0.733095, 0.125, 0.20286, 0.13882)
+
+[node name="leg-right" parent="Character/character/root" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.733095, -0.680126, 0, 0.680126, 0.733095, -0.125, 0.201072, -0.190345)
+
+[node name="torso" parent="Character/character/root" index="2"]
+transform = Transform3D(0.997293, 0.00578497, -0.0732981, -5.18467e-05, 0.996954, 0.0779781, 0.0735261, -0.0777632, 0.994256, -1.80478e-15, 0.17625, -0.02375)
+
+[node name="arm-left" parent="Character/character/root/torso" index="0"]
+transform = Transform3D(0.956555, 0.288584, 0.041503, -0.288375, 0.957454, -0.0110739, -0.0429329, -0.00137567, 0.999077, 0.3, 0.175, 0)
+
+[node name="arm-right" parent="Character/character/root/torso" index="1"]
+transform = Transform3D(0.956555, -0.288584, -0.041503, 0.288375, 0.957454, -0.0110739, 0.0429329, -0.00137567, 0.999077, -0.3, 0.1195, 0)
+
+[node name="antenna" parent="Character/character/root/torso" index="2"]
+transform = Transform3D(1, 0, 0, 0, 0.983598, 0.180368, 0, -0.180368, 0.983598, 0, 0.6, 0)
+
 [node name="ButtonPresserArea3D" type="Area3D" parent="Character"]
 collision_layer = 4
 monitoring = false

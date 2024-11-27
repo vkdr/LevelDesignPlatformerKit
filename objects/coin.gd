@@ -1,6 +1,6 @@
 extends Area3D
 
-var time := 0.0
+var time := randf_range(0,1)
 var grabbed := false
 
 # Collecting coins
@@ -22,6 +22,6 @@ func _on_body_entered(body):
 func _process(delta):
 	
 	rotate_y(2 * delta) # Rotation
-	position.y += (cos(time * 5) * 1) * delta # Sine movement
+	position.y += (cos(time * 5) * 0.5) * delta # Sine movement
 	
 	time += delta

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://6uo2cw34rvx4"]
+
+[ext_resource type="PackedScene" uid="uid://cd0b5wrqccjbx" path="res://models/props/block-grass-corner-low.glb" id="1_qdgrv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j7eht"]
+size = Vector3(1, 0.44519, 1)
+
+[node name="block-grass-corner-low2" instance=ExtResource("1_qdgrv")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-corner-low" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-corner-low/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.277405, 0)
+shape = SubResource("BoxShape3D_j7eht")

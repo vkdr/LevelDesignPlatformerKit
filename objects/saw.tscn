@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bprrlrsrodjse"]
+[gd_scene load_steps=6 format=3 uid="uid://bprrlrsrodjse"]
 
 [ext_resource type="PackedScene" uid="uid://day542mhkw6j7" path="res://models/props/saw.glb" id="1_7cccq"]
 [ext_resource type="PackedScene" uid="uid://bunxb353h3lje" path="res://objects/damage_dealer_area_3d.tscn" id="2_w12bb"]
+[ext_resource type="PackedScene" uid="uid://s1bbwujq22dg" path="res://models/props/block-grass-large-tall.glb" id="3_nvs60"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_juh84"]
 size = Vector3(1, 1, 0.6)
@@ -21,5 +22,8 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" index="0"]
 shape = SubResource("BoxShape3D_gjnwj")
+
+[node name="block-grass-large-tall2" parent="." index="3" instance=ExtResource("3_nvs60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57077, 0, 1.79694)
 
 [editable path="DamageDealerArea3D"]

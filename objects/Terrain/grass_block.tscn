@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqx6ldjrk4x5r"]
+
+[ext_resource type="PackedScene" uid="uid://b3ap2h5at6cqh" path="res://objects/Terrain/sand_block.tscn" id="1_w762c"]
+[ext_resource type="Texture2D" uid="uid://72ldk18ropuj" path="res://models/props/Textures/colormap.png" id="2_7fhps"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bgfyd"]
+albedo_texture = ExtResource("2_7fhps")
+texture_filter = 1
+
+[node name="grass-block" instance=ExtResource("1_w762c")]
+
+[node name="block-grass-large-tall" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_bgfyd")
+
+[node name="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.275422, 0.977493, 0.111084)
