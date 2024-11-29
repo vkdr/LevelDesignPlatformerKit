@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0ckjrs0xr7cy"]
+
+[ext_resource type="PackedScene" uid="uid://cittfy5ibaiot" path="res://models/props/block-grass-low-large.glb" id="1_4xceu"]
+[ext_resource type="PackedScene" uid="uid://bunxb353h3lje" path="res://objects/damage_dealer_area_3d.tscn" id="2_n6qgu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a34xv"]
+albedo_color = Color(1, 0.333333, 0, 1)
+emission = Color(1, 0.3, 0, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5fiio"]
+size = Vector3(1.9978, 1.00249, 2.0332)
+
+[node name="lava-block" instance=ExtResource("1_4xceu")]
+
+[node name="block-grass-low-large" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 2.06066, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_a34xv")
+
+[node name="DamageDealerArea3D" parent="." index="1" instance=ExtResource("2_n6qgu")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="DamageDealerArea3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.494942, 0)
+shape = SubResource("BoxShape3D_5fiio")
