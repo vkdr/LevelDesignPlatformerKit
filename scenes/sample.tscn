@@ -52,7 +52,7 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_awtyp"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.294, 11.868, -31.636, 0, 0, 0, 0, 0, 0, 1.475, 16.969, -31.823),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.689003, 11.868, -32.6327, 0, 0, 0, 0, 0, 0, -0.508003, 16.969, -32.8197),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -301,16 +301,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63471, 13.6582, -29.7095)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63471, 14.7992, -29.7095)
 
 [node name="coin15" parent="World" instance=ExtResource("20_lfsn4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38214, 12.8522, -31.74)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512304, 12.8522, -32.7446)
 
 [node name="coin16" parent="World" instance=ExtResource("20_lfsn4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38214, 13.9867, -31.74)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512304, 13.9867, -32.7446)
 
 [node name="coin17" parent="World" instance=ExtResource("20_lfsn4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38214, 15.2147, -31.74)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512304, 15.2147, -32.7446)
 
 [node name="coin18" parent="World" instance=ExtResource("20_lfsn4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38214, 16.3557, -31.74)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512304, 16.3557, -32.7446)
 
 [node name="coin4" parent="World" instance=ExtResource("20_lfsn4")]
 transform = Transform3D(0.992957, 0, -0.118473, 0, 1, 0, 0.118473, 0, 0.992957, 6.0443, 10.6583, -25.8851)
@@ -362,7 +362,7 @@ movement_speed = 2.0
 ping_pong = true
 
 [node name="PathFollow3D" parent="World/moving_object_path" index="0"]
-transform = Transform3D(0.718581, 0.694525, -0.0355848, 2.98016e-08, 0.0511688, 0.998684, 0.695437, -0.717639, 0.036769, 3.5615, 15.2481, -29.6221)
+transform = Transform3D(0.718549, 0.694558, -0.0355872, 0, 0.0511698, 0.998684, 0.69547, -0.717607, 0.0367682, 3.5615, 15.2481, -29.6221)
 
 [node name="moving_object_path2" parent="World" node_paths=PackedStringArray("object_to_move") instance=ExtResource("6_fuduw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00491619, -0.0264959, 0.0125456)
@@ -372,10 +372,10 @@ movement_speed = 2.0
 ping_pong = true
 
 [node name="PathFollow3D" parent="World/moving_object_path2" index="0"]
-transform = Transform3D(0.718537, -0.694575, -0.0354358, 2.98016e-08, 0.0509517, -0.998683, 0.695482, 0.717601, 0.0366105, 1.294, 11.868, -31.636)
+transform = Transform3D(0.71853, -0.694583, -0.0354361, -5.96039e-08, 0.0509517, -0.998679, 0.695489, 0.717594, 0.03661, -0.689003, 11.868, -32.6327)
 
 [node name="platform2" parent="World" instance=ExtResource("16_82380")]
-transform = Transform3D(-0.806301, 0, 0.591507, 0, 1, 0, -0.591507, 0, -0.806301, 1.42379, 11.5617, -31.7475)
+transform = Transform3D(-0.806301, 0, 0.591507, 0, 1, 0, -0.591507, 0, -0.806301, -0.650391, 11.5617, -32.6823)
 
 [node name="fence-low-straight4" parent="World" instance=ExtResource("28_8e6c8")]
 transform = Transform3D(1.05206, 0.0129281, -0.900542, -0.00958405, 1.38484, 0.00868413, 0.900586, -0.00036489, 1.0521, -3.49597, 15.478, -36.5141)
