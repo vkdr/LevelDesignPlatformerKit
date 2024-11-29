@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dghlxxksdeoqc"]
+
+[ext_resource type="PackedScene" uid="uid://cmkdwrjcbf2o1" path="res://models/props/arrow.glb" id="1_0v8yk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tmoah"]
+size = Vector3(0.333862, 0.547852, 0.0905762)
+
+[node name="arrow-sign" instance=ExtResource("1_0v8yk")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="arrow" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="arrow/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00689697, 0.268066, 0.00671387)
+shape = SubResource("BoxShape3D_tmoah")
