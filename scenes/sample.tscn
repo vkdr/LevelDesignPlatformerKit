@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://e6jwbml72r4o"]
+[gd_scene load_steps=40 format=3 uid="uid://e6jwbml72r4o"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_apxki"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_hgw2l"]
@@ -16,17 +16,23 @@
 [ext_resource type="LabelSettings" uid="uid://daohhjonjrdx8" path="res://themes/label_settings.tres" id="24_6hsja"]
 [ext_resource type="PackedScene" uid="uid://ctfjj2573fbex" path="res://models/props/plant.glb" id="25_kcrds"]
 [ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="25_vfu23"]
-[ext_resource type="PackedScene" uid="uid://b3ap2h5at6cqh" path="res://objects/Terrain/sand_block.tscn" id="26_l8cc2"]
 [ext_resource type="PackedScene" uid="uid://b7yv016l57x1q" path="res://models/props/mushrooms.glb" id="26_mbnnl"]
 [ext_resource type="Theme" uid="uid://d3avl0mr4r87l" path="res://themes/default_theme.tres" id="26_xw2uw"]
 [ext_resource type="PackedScene" uid="uid://c0ckjrs0xr7cy" path="res://objects/Terrain/lava_block.tscn" id="27_a4v80"]
 [ext_resource type="PackedScene" uid="uid://cyvet7kb6y80r" path="res://objects/checkpoint.tscn" id="27_bjmps"]
 [ext_resource type="Texture2D" uid="uid://dm50aa4qogm65" path="res://sprites/button_rectangle_depth_gloss.png" id="27_ct75u"]
 [ext_resource type="PackedScene" uid="uid://clpng7r25g3yx" path="res://objects/Terrain/rocks.tscn" id="27_r547d"]
+[ext_resource type="PackedScene" uid="uid://cr6x5i184sr7j" path="res://objects/Terrain/block_snow_large_tall.tscn" id="27_xg7e5"]
 [ext_resource type="PackedScene" uid="uid://ussuxv1pdanv" path="res://objects/Terrain/fence_low_straight.tscn" id="28_8e6c8"]
+[ext_resource type="PackedScene" uid="uid://duwjoso8oa3n0" path="res://objects/Terrain/pine_small.tscn" id="28_nplyt"]
+[ext_resource type="PackedScene" uid="uid://bewr6gnqi2wgq" path="res://objects/Terrain/pine.tscn" id="29_nuni4"]
+[ext_resource type="PackedScene" uid="uid://jjbgso346kgq" path="res://objects/Terrain/snow_pine.tscn" id="30_bartb"]
 [ext_resource type="PackedScene" uid="uid://dqx6ldjrk4x5r" path="res://objects/Terrain/grass_block.tscn" id="30_lw8ik"]
 [ext_resource type="PackedScene" uid="uid://bj0gyav5wb6yw" path="res://objects/Terrain/platform_fortified.tscn" id="31_hbyr2"]
+[ext_resource type="PackedScene" uid="uid://y5l15634nln2" path="res://objects/Terrain/snow_pine_small.tscn" id="31_kaeni"]
+[ext_resource type="PackedScene" uid="uid://cmxm1712ey4yg" path="res://objects/Terrain/snow_tree.tscn" id="32_b5f4h"]
 [ext_resource type="PackedScene" uid="uid://b64cqeyh8baeb" path="res://objects/Terrain/platform_overhang.tscn" id="32_wspbk"]
+[ext_resource type="PackedScene" uid="uid://cgli05deejgwk" path="res://objects/Terrain/tree.tscn" id="33_dnwy5"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
 auto_exposure_scale = 0.75
@@ -248,9 +254,6 @@ transform = Transform3D(0.734456, 0.0124452, -1.17404, -0.00958405, 1.38484, 0.0
 [node name="flag" parent="World/Mountain peak" instance=ExtResource("7_dhnka")]
 transform = Transform3D(0.28281, 0, -0.959176, 0, 1, 0, 0.959176, 0, 0.28281, -5.15339, 15.6303, 21.4408)
 
-[node name="sand-block" parent="World" instance=ExtResource("26_l8cc2")]
-transform = Transform3D(100.484, 0, 0, 0, 26.4102, 0, 0, 0, 79.2475, -43.2926, -50.5729, -20.9121)
-
 [node name="grass-block" parent="World" instance=ExtResource("30_lw8ik")]
 transform = Transform3D(20.6407, 0, 0, 0, 12.7639, 0, 0, 0, 17.9546, -1.09132, -23.8861, -31.8487)
 visible = false
@@ -275,6 +278,9 @@ transform = Transform3D(28.8749, 0, 12.6956, 0, 50.6848, 0, -12.7522, 0, 28.7467
 
 [node name="rocks19" parent="World" instance=ExtResource("27_r547d")]
 transform = Transform3D(26.729, 0, 3.68017, 0, 47.6745, 0, -3.69659, 0, 26.6103, -31.9146, 16.9314, -19.2608)
+
+[node name="rocks35" parent="World" instance=ExtResource("27_r547d")]
+transform = Transform3D(-24.8153, 0, 10.5504, 0, 47.6745, 0, -10.5974, 0, -24.7051, -27.9778, 20.1552, -28.9868)
 
 [node name="rocks22" parent="World" instance=ExtResource("27_r547d")]
 transform = Transform3D(23.2458, 3.88561, 13.4639, -2.93473, 47.3763, 0.68086, -13.3837, -3.63971, 23.236, -27.6612, 12.8994, 10.0193)
@@ -425,7 +431,7 @@ movement_speed = 2.0
 ping_pong = true
 
 [node name="PathFollow3D" parent="World/moving_object_path" index="0"]
-transform = Transform3D(0.718549, 0.694558, -0.0355871, 0, 0.0511698, 0.998682, 0.69547, -0.717607, 0.0367681, 3.5615, 15.2481, -29.6221)
+transform = Transform3D(0.718549, 0.694558, -0.0355871, 0, 0.0511698, 0.998681, 0.69547, -0.717607, 0.0367681, 3.5615, 15.2481, -29.6221)
 
 [node name="moving_object_path2" parent="World" node_paths=PackedStringArray("object_to_move") instance=ExtResource("6_fuduw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00491619, -0.0264959, 0.0125456)
@@ -580,6 +586,30 @@ transform = Transform3D(4.80243, 0, 0, 0, 0.964861, -1.41098, 0, 0.262762, 5.181
 
 [node name="checkpoint" parent="World" instance=ExtResource("27_bjmps")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5666, 14.9806, -36.1777)
+
+[node name="checkpoint2" parent="World" instance=ExtResource("27_bjmps")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6272, 31.4393, 5.71942)
+
+[node name="block-snow-large-tall" parent="." instance=ExtResource("27_xg7e5")]
+transform = Transform3D(45.0554, 0, 0, 0, 45.0554, 0, 0, 0, 45.0554, -4.31347, -88.4915, -3.60903)
+
+[node name="tree-pine-small2" parent="." instance=ExtResource("28_nplyt")]
+transform = Transform3D(1.41251, 0, 0, 0, 1.41251, 0, 0, 0, 1.41251, 18.173, 1.53479, -23.896)
+
+[node name="tree-pine2" parent="." instance=ExtResource("29_nuni4")]
+transform = Transform3D(1.41251, 0, 0, 0, 1.41251, 0, 0, 0, 1.41251, 16.3956, 1.53479, -22.7079)
+
+[node name="tree-pine-snow2" parent="." instance=ExtResource("30_bartb")]
+transform = Transform3D(1.41251, 0, 0, 0, 1.41251, 0, 0, 0, 1.41251, 15.5272, 1.53479, -23.9563)
+
+[node name="tree-pine-snow-small2" parent="." instance=ExtResource("31_kaeni")]
+transform = Transform3D(1.41251, 0, 0, 0, 1.41251, 0, 0, 0, 1.41251, 17.7231, 1.53479, -25.4429)
+
+[node name="tree-snow2" parent="." instance=ExtResource("32_b5f4h")]
+transform = Transform3D(1.41251, 0, 0, 0, 1.41251, 0, 0, 0, 1.41251, 16.6243, 1.53479, -26.1937)
+
+[node name="tree2" parent="." instance=ExtResource("33_dnwy5")]
+transform = Transform3D(1.41251, 0, 0, 0, 1.41251, 0, 0, 0, 1.41251, 14.6565, 1.53479, -25.9577)
 
 [connection signal="pressed" from="HUD/Control/PlayAgainButton" to="HUD" method="_on_play_again_button_pressed"]
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bewr6gnqi2wgq"]
+
+[ext_resource type="PackedScene" uid="uid://d2veqbfgvsag0" path="res://models/props/tree-pine.glb" id="1_xjurj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_chybm"]
+radius = 0.23648
+height = 2.35516
+
+[node name="tree-pine2" instance=ExtResource("1_xjurj")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tree-pine" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree-pine/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.735949, 0)
+shape = SubResource("CapsuleShape3D_chybm")

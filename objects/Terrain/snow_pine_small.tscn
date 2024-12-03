@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://y5l15634nln2"]
+
+[ext_resource type="PackedScene" uid="uid://b7w3bwm7iuk8c" path="res://models/props/tree-pine-snow-small.glb" id="1_k504a"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_37t67"]
+radius = 0.146532
+height = 1.43276
+
+[node name="tree-pine-snow-small2" instance=ExtResource("1_k504a")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tree-pine-snow-small" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree-pine-snow-small/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.653843, 0)
+shape = SubResource("CapsuleShape3D_37t67")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://duwjoso8oa3n0"]
+
+[ext_resource type="PackedScene" uid="uid://1876pqglxnsg" path="res://models/props/tree-pine-small.glb" id="1_ruel5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_chybm"]
+radius = 0.23648
+height = 2.35516
+
+[node name="tree-pine-small2" instance=ExtResource("1_ruel5")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tree-pine-small" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree-pine-small/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.563893, 0)
+shape = SubResource("CapsuleShape3D_chybm")
