@@ -10,7 +10,7 @@ emission = Color(1, 0.3, 0, 1)
 emission_energy_multiplier = 16.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5fiio"]
-size = Vector3(1.9978, 1.00249, 2.0332)
+size = Vector3(1.83569, 1.00249, 1.83301)
 
 [node name="lava-block" instance=ExtResource("1_4xceu")]
 
