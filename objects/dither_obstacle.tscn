@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqe83pil81wbx"]
+[gd_scene load_steps=2 format=3 uid="uid://bbufrkbmqukhq"]
 
 [ext_resource type="Script" path="res://objects/dither_obstacle.gd" id="1_ila2u"]
 
