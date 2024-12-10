@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://e6jwbml72r4o"]
+[gd_scene load_steps=61 format=4 uid="uid://e6jwbml72r4o"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_apxki"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_hgw2l"]
@@ -62,6 +62,9 @@ shadow_offset = Vector2(2, 2)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_delpu"]
 transparency = 1
 shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.396545, 0.414837, 0.570313, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_og41i"]
 material = SubResource("StandardMaterial3D_delpu")
@@ -94,8 +97,8 @@ albedo_color = Color(0.03, 0.03, 0.03, 0.537255)
 material = SubResource("StandardMaterial3D_rh62r")
 size = Vector3(5, 5, 5)
 
-[sub_resource type="Curve" id="Curve_qrjhx"]
-_data = [Vector2(0, 0), 0.0, 31.9487, 0, 0, Vector2(0.146067, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.63266, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_63sjj"]
+_data = [Vector2(0, 0), 0.0, 10.3391, 0, 0, Vector2(0.275281, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.1729, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_mdljd"]
@@ -162,6 +165,10 @@ size = Vector3(1.83569, 1.00249, 1.83301)
 
 [sub_resource type="BoxMesh" id="BoxMesh_oi5bd"]
 material = SubResource("StandardMaterial3D_rh62r")
+
+[sub_resource type="Curve" id="Curve_qrjhx"]
+_data = [Vector2(0, 0), 0.0, 31.9487, 0, 0, Vector2(0.146067, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.63266, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Curve3D" id="Curve3D_wtc3j"]
 _data = {
@@ -316,12 +323,12 @@ view = NodePath("../View")
 jump_strength = 8
 
 [node name="SNOW" type="CPUParticles3D" parent="Player"]
-transform = Transform3D(-0.0207681, 0, -0.999784, 0, 1, 0, 0.999784, 0, -0.0207681, 0, 5.96807, 0)
-amount = 100
+transform = Transform3D(-0.0207681, 0, -0.999784, 0, 1, 0, 0.999784, 0, -0.0207681, 0, 10.963, 0)
+amount = 200
 lifetime = 2.0
 mesh = SubResource("SphereMesh_og41i")
 emission_shape = 3
-emission_box_extents = Vector3(10.055, 1, 13.585)
+emission_box_extents = Vector3(10.055, 8.96, 13.585)
 direction = Vector3(0, -5, 0)
 spread = 7.04
 gravity = Vector3(0, 0, 0)
@@ -331,6 +338,8 @@ scale_amount_curve = SubResource("Curve_f1uwp")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
+light_color = Color(0.328125, 0.480347, 1, 1)
+light_energy = 0.04
 shadow_enabled = true
 shadow_opacity = 0.75
 
@@ -810,7 +819,7 @@ spread = 18.18
 gravity = Vector3(0, 0, 0)
 initial_velocity_min = 3.4
 initial_velocity_max = 19.1
-scale_amount_curve = SubResource("Curve_qrjhx")
+scale_amount_curve = SubResource("Curve_63sjj")
 color = Color(1, 0, 0, 1)
 color_ramp = SubResource("Gradient_mdljd")
 
@@ -827,6 +836,7 @@ initial_velocity_min = 3.4
 initial_velocity_max = 19.1
 linear_accel_min = -10.1
 linear_accel_max = -10.1
+scale_amount_curve = SubResource("Curve_63sjj")
 color = Color(1, 0, 0, 1)
 color_ramp = SubResource("Gradient_mdljd")
 
@@ -843,6 +853,7 @@ initial_velocity_min = 3.4
 initial_velocity_max = 19.1
 linear_accel_min = -10.1
 linear_accel_max = -10.1
+scale_amount_curve = SubResource("Curve_63sjj")
 color = Color(1, 0, 0, 1)
 color_ramp = SubResource("Gradient_mdljd")
 
@@ -859,6 +870,7 @@ initial_velocity_min = 3.4
 initial_velocity_max = 19.1
 linear_accel_min = -10.1
 linear_accel_max = -10.1
+scale_amount_curve = SubResource("Curve_63sjj")
 color = Color(1, 0, 0, 1)
 color_ramp = SubResource("Gradient_mdljd")
 
@@ -875,6 +887,7 @@ initial_velocity_min = 3.4
 initial_velocity_max = 19.1
 linear_accel_min = -10.1
 linear_accel_max = -10.1
+scale_amount_curve = SubResource("Curve_63sjj")
 color = Color(1, 0, 0, 1)
 color_ramp = SubResource("Gradient_mdljd")
 
