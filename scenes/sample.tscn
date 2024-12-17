@@ -822,7 +822,7 @@ movement_speed = 2.0
 ping_pong = true
 
 [node name="PathFollow3D" parent="World/moving_object_path" index="0"]
-transform = Transform3D(0.718549, 0.694558, -0.0355871, 0, 0.0511698, 0.99868, 0.69547, -0.717607, 0.036768, 3.5615, 15.2481, -29.6221)
+transform = Transform3D(0.718549, 0.694558, -0.0355871, 0, 0.0511698, 0.99868, 0.69547, -0.717607, 0.0367681, 3.5615, 15.2481, -29.6221)
 
 [node name="moving_object_path2" parent="World" node_paths=PackedStringArray("object_to_move") instance=ExtResource("6_fuduw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00491619, -0.0264959, 0.0125456)
@@ -1626,7 +1626,7 @@ transform = Transform3D(-2.32191, 0, -1.88548, 0, 2.99104, 0, 1.88548, 0, -2.321
 transform = Transform3D(-2.32191, 0, -1.88548, 0, 2.99104, 0, 1.88548, 0, -2.32191, 5.87285, 2.13357, 36.3765)
 
 [node name="tree-snow2" parent="World" instance=ExtResource("32_b5f4h")]
-transform = Transform3D(2.98971, -0.0892159, 0.00403099, 0.0893069, 2.98666, -0.134944, 0, 0.135005, 2.98799, 38.5646, 2.13357, 9.93192)
+transform = Transform3D(2.97936, -0.263849, 0.0119213, 0.264119, 2.97632, -0.134477, 0, 0.135005, 2.98799, 38.5646, 2.13357, 9.93192)
 
 [node name="tree-snow3" parent="World" instance=ExtResource("32_b5f4h")]
 transform = Transform3D(2.97774, 0.281689, 0, -0.281689, 2.97774, 0, 0, 0, 2.99104, 48.474, 8.03665, 13.389)
