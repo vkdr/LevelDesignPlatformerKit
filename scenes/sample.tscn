@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://e6jwbml72r4o"]
+[gd_scene load_steps=77 format=4 uid="uid://e6jwbml72r4o"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_apxki"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_hgw2l"]
@@ -36,6 +36,10 @@
 [ext_resource type="Texture2D" uid="uid://72ldk18ropuj" path="res://models/props/Textures/colormap.png" id="34_123ll"]
 [ext_resource type="PackedScene" uid="uid://b3ap2h5at6cqh" path="res://objects/Terrain/sand_block.tscn" id="34_frka5"]
 [ext_resource type="PackedScene" uid="uid://bunxb353h3lje" path="res://objects/damage_dealer_area_3d.tscn" id="35_sqmlb"]
+[ext_resource type="PackedScene" uid="uid://jryv4a1bwjmq" path="res://objects/Terrain/cube.tscn" id="37_eootv"]
+[ext_resource type="Texture2D" uid="uid://0odt7cvj574e" path="res://models/core_models/Textures/colormap.png" id="38_a6ksc"]
+[ext_resource type="Texture2D" uid="uid://bvj25ii6y01ic" path="res://models/prototyping/models/Textures/colormap.png" id="39_8j4ru"]
+[ext_resource type="PackedScene" uid="uid://bhv2ywmpktbk6" path="res://models/prototyping/models/door-rotate.glb" id="40_ugll7"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
 auto_exposure_scale = 0.75
@@ -88,6 +92,14 @@ _data = {
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp48o"]
+albedo_color = Color(1, 0.368627, 0.607843, 1)
+metallic = 0.65
+metallic_specular = 1.0
+roughness = 0.4
+emission_enabled = true
+emission = Color(1, 0.13, 0.652, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rh62r"]
 transparency = 1
@@ -179,10 +191,10 @@ point_count = 7
 
 [sub_resource type="Curve3D" id="Curve3D_1dt6g"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -28.4547, 33.3618, -3.96719, 0, 0, 0, 0, 0, 0, -25.539, 42.4801, -4.94235, 0, 0, 0, 0, 0, 0, -22.1856, 44.1362, -6.94903, 0, 0, 0, 0, 0, 0, -17.3585, 42.3744, -8.77597, 0, 0, 0, 0, 0, 0, -12.7804, 31.2433, -9.99681, 0, 0, 0, 0, 0, 0, -10.0801, 4.37683, -11.787, 0, 0, 0, 0, 0, 0, -29.2184, 22.6182, -2.93897, 0, 0, 0, 0, 0, 0, -28.4547, 33.3618, -2.3147),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -27.1517, 33.5001, -2.15496, 0, 0, 0, 0, 0, 0, -23.4963, 42.7671, -4.30238, 0, 0, 0, 0, 0, 0, -17.5834, 44.1362, -7.42014, 0, 0, 0, 0, 0, 0, -12.7804, 31.2433, -9.99681, 0, 0, 0, 0, 0, 0, -10.0801, 4.37683, -11.787, 0, 0, 0, 0, 0, 0, -27.9154, 13.4365, -2.22442, 0, 0, 0, 0, 0, 0, -27.1312, 33.5119, -2.15693),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 8
+point_count = 7
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5nrcb"]
 albedo_color = Color(0.24, 0.096, 0.1008, 0.831373)
@@ -201,6 +213,54 @@ point_count = 3
 [sub_resource type="Curve" id="Curve_kucwc"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.527472), -1.58929, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3wqr"]
+albedo_texture = ExtResource("38_a6ksc")
+uv1_offset = Vector3(2.245, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ltigp"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("39_8j4ru")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_d2awn"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 1, 1),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIABAAAAAIAAgAFAAQABAAGAAEAAQAAAAQABwAGAAQABAAFAAcABwADAAEAAQAGAAcAAgADAAcABwAFAAIA"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAAAAD//wAAAAAAAAAA//8AAAAA/////wAAAAAAAAAA//8AAAAA/////wAA//8AAP//AAD///////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jmiya"]
+resource_name = "shape-cube_shape-cube"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 1, 1),
+"attribute_data": PackedByteArray("/3eY+f93mPn/d2XG/3dlxv93mPn/d2XG/3eY+f93Zcb/d5j5/3eY+f93mPn/d5j5/3eY+f93mPn/d2XG/3dlxv93Zcb/d5j5/3dlxv93mPn/d2XG/3dlxv93Zcb/d2XG"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIABgAEAAUABQAHAAYACgAIAAkACQALAAoADgAMAA0ADQAPAA4AEgAQABEAEQATABIAFgAUABUAFQAXABYA"),
+"material": SubResource("StandardMaterial3D_ltigp"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAAAA/////wAAAAD//wAA//8AAP///////wAA//8AAAAAAAD/vwAA//8AAP+/AAAAAP///78AAP//////v///AAD///+///8AAAAA/78AAAAA////vwAAAAAAAP+///8AAP//AIAAAAAA//8AgP///////wCAAAD/////AID/////AAD/v///AAAAAP+//////////7///wAA////v/////8AAP////////////8AAP//AAD//wAA/////////3////9/////f////3////9/////f////3////9///8AAP9/AAD/fwAA/38AAP9//3////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_d2awn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ft3tw"]
+albedo_texture = ExtResource("38_a6ksc")
+uv1_offset = Vector3(2.585, 0, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_16pwg"]
 
 [node name="Main" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00491619, 0.0264959, -0.0125456)
@@ -326,17 +386,17 @@ process_mode = 3
 transform = Transform3D(0.707107, -0.298836, 0.640856, 0, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 0, 0, 0)
 script = ExtResource("3_xcrwe")
 target = NodePath("../Player")
-zoom_maximum = 8
+zoom_minimum = 8
 default_zoom = 16
 camera_angle_max = 0.0
 
 [node name="Camera" type="Camera3D" parent="View"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+transform = Transform3D(1, 0, 0, 0, 1, -3.57628e-07, 0, 0, 1, 38.7427, -14.064, 40.1604)
 current = true
-fov = 40.0
+fov = 68.0559
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_hgw2l")]
-transform = Transform3D(-0.436802, 0, -0.899558, 0, 1, 0, 0.899558, 0, -0.436802, 55.7191, 3.62604, 3.29406)
+transform = Transform3D(-0.436802, 0, -0.899558, 0, 1, 0, 0.899558, 0, -0.436802, 60.5777, 3.08978, 6.22565)
 view = NodePath("../View")
 movement_speed = 270
 jump_strength = 8
@@ -405,7 +465,7 @@ transform = Transform3D(0.0856939, 0.00926074, -1.38222, -0.00958405, 1.38484, 0
 transform = Transform3D(0.734456, 0.0124452, -1.17404, -0.00958405, 1.38484, 0.00868413, 1.17407, 0.00351935, 0.73451, -1.5863, 4.67257, -0.342348)
 
 [node name="flag" parent="World/Mountain peak" instance=ExtResource("7_dhnka")]
-transform = Transform3D(0.28281, 0, -0.959176, 0, 1, 0, 0.959176, 0, 0.28281, -5.15339, 15.6303, 21.4408)
+transform = Transform3D(-1.08351, 0, -0.399598, 0, 1.15485, 0, 0.399598, 0, -1.08351, -5.15339, 15.6303, 21.4408)
 
 [node name="grass-block" parent="World" instance=ExtResource("30_lw8ik")]
 transform = Transform3D(20.6407, 0, 0, 0, 12.7639, 0, 0, 0, 17.9546, -1.09132, -23.8861, -31.8487)
@@ -446,6 +506,9 @@ transform = Transform3D(-24.8153, 0, 10.5504, 0, 47.6745, 0, -10.5974, 0, -24.70
 
 [node name="rocks42" parent="World" instance=ExtResource("27_r547d")]
 transform = Transform3D(-40.8297, 0, -5.79231, 0, 89.424, 0, 5.81822, 0, -40.6484, -37.9924, 12.0515, -37.1087)
+
+[node name="rocks52" parent="World" instance=ExtResource("27_r547d")]
+transform = Transform3D(55.9558, 0, -22.2724, 0, 130.665, 0, 22.3716, 0, 55.7073, -43.0513, 1.56975, -49.7621)
 
 [node name="rocks43" parent="World" instance=ExtResource("27_r547d")]
 transform = Transform3D(-11.3049, 0, 39.4864, 0, 89.424, 0, -39.6625, 0, -11.2546, -55.762, 5.69029, -38.4454)
@@ -629,7 +692,7 @@ movement_speed = 2.0
 ping_pong = true
 
 [node name="PathFollow3D" parent="World/moving_object_path" index="0"]
-transform = Transform3D(0.718549, 0.694558, -0.0355871, 0, 0.0511698, 0.99868, 0.69547, -0.717607, 0.0367681, 3.5615, 15.2481, -29.6221)
+transform = Transform3D(0.718549, 0.694558, -0.0355871, 0, 0.0511698, 0.99868, 0.69547, -0.717607, 0.036768, 3.5615, 15.2481, -29.6221)
 
 [node name="moving_object_path2" parent="World" node_paths=PackedStringArray("object_to_move") instance=ExtResource("6_fuduw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00491619, -0.0264959, 0.0125456)
@@ -767,6 +830,15 @@ transform = Transform3D(1.30104, 0, 0, 0, 1.30104, 0, 0, 0, 1.30104, -28.6886, 3
 [node name="mushrooms2" parent="World" instance=ExtResource("26_mbnnl")]
 transform = Transform3D(1.23343, 0, 0, 0, 1.23343, 0, 0, 0, 1.23343, -26.8184, 36.0012, -23.2743)
 
+[node name="plant3" parent="World" instance=ExtResource("25_kcrds")]
+transform = Transform3D(-0.834137, 0.0898047, -0.726174, 0.156493, 1.56524, -0.0559344, 0.81516, -0.208597, -0.732342, -25.0919, 31.6279, 6.47444)
+
+[node name="plant4" parent="World" instance=ExtResource("25_kcrds")]
+transform = Transform3D(1.10937, 0.0898047, -0.339479, -0.0113624, 1.56524, 0.147972, 0.392343, -0.208597, 0.964179, -25.7446, 31.4618, 4.94762)
+
+[node name="mushrooms3" parent="World" instance=ExtResource("26_mbnnl")]
+transform = Transform3D(0.438281, 0.0881733, 1.14956, -0.215278, 1.21445, -0.0110733, -1.13266, -0.196705, 0.446925, -26.6385, 31.594, 5.13584)
+
 [node name="lava-block" parent="World" instance=ExtResource("27_a4v80")]
 transform = Transform3D(4.80243, 0, 0, 0, 1, 0, 0, 0, 5.36983, -13.8574, 10.3279, -28.3883)
 
@@ -830,16 +902,181 @@ transform = Transform3D(4.80243, 0, 0, 0, 0.964861, -1.41098, 0, 0.262762, 5.181
 [node name="checkpoint" parent="World" instance=ExtResource("27_bjmps")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5666, 14.9806, -36.1777)
 
+[node name="OmniLight3D2" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9596, 16.8708, -33.6583)
+light_color = Color(1, 0.416667, 0, 1)
+light_energy = 2.895
+light_specular = 11.167
+shadow_enabled = true
+shadow_blur = 6.051
+omni_range = 8.87861
+omni_attenuation = 0.596
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7829, 13.3096, -28.7927)
+light_color = Color(1, 0.416667, 0, 1)
+light_energy = 2.895
+light_specular = 11.167
+shadow_enabled = true
+shadow_opacity = 0.68
+shadow_blur = 8.051
+omni_range = 8.87861
+omni_attenuation = 0.596
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2346, 13.014, -23.5384)
+light_color = Color(1, 0.416667, 0, 1)
+light_energy = 6.935
+light_specular = 11.167
+shadow_enabled = true
+shadow_opacity = 0.68
+shadow_blur = 8.051
+omni_range = 12.1291
+omni_attenuation = 0.596
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9938, 17.9032, -19.8663)
+light_color = Color(1, 0.416667, 0, 1)
+light_energy = 3.379
+light_specular = 11.167
+shadow_enabled = true
+shadow_opacity = 0.68
+shadow_blur = 8.051
+omni_range = 12.1291
+omni_attenuation = 0.596
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.36111, 17.3893, -11.4677)
+light_color = Color(1, 0.416667, 0, 1)
+light_energy = 3.379
+light_specular = 11.167
+shadow_enabled = true
+shadow_opacity = 0.68
+shadow_blur = 8.051
+omni_range = 12.1291
+omni_attenuation = 0.596
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.04628, 29.8063, -6.51205)
+light_color = Color(1, 0.55, 0, 1)
+light_energy = 2.086
+light_specular = 11.167
+shadow_enabled = true
+shadow_opacity = 0.68
+shadow_blur = 8.051
+omni_range = 12.1291
+omni_attenuation = 0.596
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.02793, 41.3275, -20.3432)
+light_color = Color(1, 0.55, 0, 1)
+light_energy = 2.086
+light_specular = 11.167
+shadow_enabled = true
+shadow_opacity = 0.68
+shadow_blur = 8.051
+omni_range = 10.8405
+omni_attenuation = 0.596
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.662, 37.511, -12.0691)
+light_color = Color(1, 0.55, 0, 1)
+light_energy = 2.086
+light_specular = 11.167
+shadow_enabled = true
+shadow_opacity = 0.68
+shadow_blur = 8.051
+omni_range = 10.8405
+omni_attenuation = 0.596
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.7754, 38.2435, -18.5593)
+light_color = Color(1, 0.55, 0, 1)
+light_energy = 2.086
+light_specular = 11.167
+shadow_enabled = true
+shadow_opacity = 0.68
+shadow_blur = 8.051
+omni_range = 10.8405
+omni_attenuation = 0.596
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.2193, 6.85983, -7.26962)
+light_color = Color(1, 0.55, 0, 1)
+light_energy = 4.672
+light_specular = 11.167
+shadow_enabled = true
+shadow_opacity = 0.68
+shadow_blur = 8.051
+omni_range = 14.8453
+omni_attenuation = 0.596
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.3741, 6.85983, -9.2323)
+light_color = Color(1, 0.55, 0, 1)
+light_energy = 4.672
+light_specular = 11.167
+shadow_enabled = true
+shadow_opacity = 0.68
+shadow_blur = 8.051
+omni_range = 14.8453
+omni_attenuation = 0.596
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.0894, 6.85983, -10.5715)
+light_color = Color(1, 0.55, 0, 1)
+light_energy = 4.672
+light_specular = 11.167
+shadow_enabled = true
+shadow_opacity = 0.68
+shadow_blur = 8.051
+omni_range = 14.8453
+omni_attenuation = 0.596
+
+[node name="OmniLight3D14" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2314, 6.85983, -13.0554)
+light_color = Color(1, 0.55, 0, 1)
+light_energy = 4.672
+light_specular = 11.167
+shadow_enabled = true
+shadow_opacity = 0.68
+shadow_blur = 8.051
+omni_range = 14.8453
+omni_attenuation = 0.596
+
+[node name="OmniLight3D15" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.6595, 6.29713, -5.11512)
+light_color = Color(1, 0.55, 0, 1)
+light_energy = 4.672
+light_specular = 11.167
+shadow_enabled = true
+shadow_opacity = 0.68
+shadow_blur = 8.051
+omni_range = 14.8453
+omni_attenuation = 0.596
+
+[node name="OmniLight3D16" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.6049, 5.39444, -2.79152)
+light_color = Color(1, 0.55, 0, 1)
+light_energy = 4.672
+light_specular = 11.167
+shadow_enabled = true
+shadow_opacity = 0.68
+shadow_blur = 8.051
+omni_range = 14.8453
+omni_attenuation = 0.596
+
 [node name="checkpoint2" parent="World" instance=ExtResource("27_bjmps")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6272, 31.4393, 5.71942)
+jewel_material = SubResource("StandardMaterial3D_cp48o")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="World/checkpoint2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75956, 0)
-light_color = Color(1, 0, 0.85, 1)
-light_energy = 10.212
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85256, 2.57033, -2.05304)
+light_color = Color(1, 0.55, 0, 1)
+light_energy = 1.485
 shadow_enabled = true
-shadow_blur = 8.475
-omni_range = 3.886
+shadow_blur = 6.051
+omni_range = 8.87861
 omni_attenuation = 0.596
 
 [node name="SMOKE3" type="CPUParticles3D" parent="World"]
@@ -1256,17 +1493,11 @@ transform = Transform3D(2.97774, 0.281689, 0, -0.281689, 2.97774, 0, 0, 0, 2.991
 [node name="tree-snow4" parent="World" instance=ExtResource("32_b5f4h")]
 transform = Transform3D(2.98963, -0.0916028, 0, 0.0916028, 2.98963, 0, 0, 0, 2.99104, 36.6853, 13.0404, 18.7578)
 
-[node name="tree2" parent="World" instance=ExtResource("33_dnwy5")]
-transform = Transform3D(2.99104, 0, 0, 0, 2.99104, 0, 0, 0, 2.99104, 62.1584, 2.13357, 5.81176)
-
 [node name="tree4" parent="World" instance=ExtResource("33_dnwy5")]
 transform = Transform3D(2.96829, 0.361857, 0.0679868, -0.364441, 2.80896, 0.960861, 0.0523972, -0.961837, 2.83168, 67.9777, 2.13357, -9.44496)
 
 [node name="tree5" parent="World" instance=ExtResource("33_dnwy5")]
 transform = Transform3D(2.51948, 1.11761, 1.16168, -1.56318, 2.22033, 1.25416, -0.39373, -1.66355, 2.45436, 52.2999, 2.78291, -10.9149)
-
-[node name="tree3" parent="World" instance=ExtResource("33_dnwy5")]
-transform = Transform3D(2.99104, 0, 0, 0, 2.88039, -0.806008, 0, 0.806008, 2.88039, 64.8486, 2.13357, 8.48808)
 
 [node name="grass-block2" parent="World" instance=ExtResource("30_lw8ik")]
 transform = Transform3D(3.75534, 0.11543, -0.608279, 0, 3.73931, 0.709591, 0.619134, -0.70014, 3.6895, 19.0793, -4.49634, -17.5001)
@@ -1732,6 +1963,217 @@ scale_amount_curve = SubResource("Curve_qrjhx")
 color = Color(1, 0, 0, 1)
 color_ramp = SubResource("Gradient_mdljd")
 
+[node name="lava-block3" parent="Lava Boulders" instance=ExtResource("27_a4v80")]
+transform = Transform3D(1.31784, 0.857457, -0.135212, -0.473231, 2.38782, -0.376536, 0, 0.756442, 1.34186, 46.285, -2.00425, 5.60494)
+
+[node name="lava-block2" type="Node3D" parent="Lava Boulders/lava-block3"]
+transform = Transform3D(0.822354, 0.929227, 0.286703, -0.215061, 0.860096, -0.162924, -0.397985, 0.258545, 0.907143, -0.810829, -0.00238037, -0.552579)
+
+[node name="block-grass-low-large" type="MeshInstance3D" parent="Lava Boulders/lava-block3/lava-block2"]
+transform = Transform3D(1, -2.98023e-08, 0, 7.45058e-09, 2.06066, 0, 0, -2.98023e-08, 1, 0.103628, 0.167987, 0.411711)
+mesh = SubResource("ArrayMesh_47x7b")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_mtts5")
+
+[node name="DamageDealerArea3D" parent="Lava Boulders/lava-block3/lava-block2" instance=ExtResource("35_sqmlb")]
+only_push = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Lava Boulders/lava-block3/lava-block2/DamageDealerArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.494942, 0)
+shape = SubResource("BoxShape3D_5fiio")
+
+[node name="SMOKE3" type="CPUParticles3D" parent="Lava Boulders/lava-block3"]
+transform = Transform3D(0.413456, -0.203929, -0.824854, 0.489218, 0.453851, -0.155903, 0.767931, -0.179335, 0.543423, -0.00640678, 0.537344, -0.150583)
+amount = 20
+lifetime = 2.0
+mesh = SubResource("BoxMesh_oi5bd")
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 2, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+scale_amount_curve = SubResource("Curve_qrjhx")
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_mdljd")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lava Boulders/lava-block3"]
+transform = Transform3D(0.714167, -1.32607e-08, 1.29526e-08, 0, 0.377718, 7.45058e-09, -7.45058e-09, 0, 0.714167, -0.38797, 0.77991, -0.308697)
+light_color = Color(1, 0.416667, 0, 1)
+light_energy = 12.768
+shadow_enabled = true
+shadow_blur = 10.0
+omni_range = 12.7989
+
+[node name="lava-block4" parent="Lava Boulders" instance=ExtResource("27_a4v80")]
+transform = Transform3D(0.0954611, 0.816567, 1.32854, -0.473231, 2.38782, -0.376536, -1.31438, -0.80041, 0.232058, 31.71, -2.00425, 2.41538)
+
+[node name="lava-block2" type="Node3D" parent="Lava Boulders/lava-block4"]
+transform = Transform3D(0.822354, 0.929227, 0.286703, -0.215061, 0.860096, -0.162924, -0.397985, 0.258545, 0.907143, -0.810829, -0.00238037, -0.552579)
+
+[node name="block-grass-low-large" type="MeshInstance3D" parent="Lava Boulders/lava-block4/lava-block2"]
+transform = Transform3D(1, -2.98023e-08, 0, 7.45058e-09, 2.06066, 0, 0, -2.98023e-08, 1, 0.103628, 0.167987, 0.411711)
+mesh = SubResource("ArrayMesh_47x7b")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_mtts5")
+
+[node name="DamageDealerArea3D" parent="Lava Boulders/lava-block4/lava-block2" instance=ExtResource("35_sqmlb")]
+only_push = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Lava Boulders/lava-block4/lava-block2/DamageDealerArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.494942, 0)
+shape = SubResource("BoxShape3D_5fiio")
+
+[node name="SMOKE3" type="CPUParticles3D" parent="Lava Boulders/lava-block4"]
+transform = Transform3D(0.413456, -0.203929, -0.824854, 0.489218, 0.453851, -0.155903, 0.767931, -0.179335, 0.543423, -0.00640678, 0.537344, -0.150583)
+amount = 20
+lifetime = 2.0
+mesh = SubResource("BoxMesh_oi5bd")
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 2, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+scale_amount_curve = SubResource("Curve_qrjhx")
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_mdljd")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lava Boulders/lava-block4"]
+transform = Transform3D(0.714167, 0, 7.45058e-09, 7.45058e-09, 0.377718, 0, 7.45058e-09, 3.72529e-09, 0.714167, -0.509928, 0.952048, -0.405733)
+light_color = Color(1, 0.416667, 0, 1)
+light_energy = 6.788
+shadow_enabled = true
+shadow_blur = 8.475
+omni_range = 11.2925
+
+[node name="lava-block5" parent="Lava Boulders" instance=ExtResource("27_a4v80")]
+transform = Transform3D(1.12362, 1.12635, 0.585875, -0.473231, 2.38782, -0.376536, -0.688609, 0.196913, 1.21475, 46.3779, -2.06024, -21.7959)
+
+[node name="lava-block2" type="Node3D" parent="Lava Boulders/lava-block5"]
+transform = Transform3D(0.822354, 0.929227, 0.286703, -0.215061, 0.860096, -0.162924, -0.397985, 0.258545, 0.907143, -0.810829, -0.00238037, -0.552579)
+
+[node name="block-grass-low-large" type="MeshInstance3D" parent="Lava Boulders/lava-block5/lava-block2"]
+transform = Transform3D(1, -2.98023e-08, 0, 7.45058e-09, 2.06066, 0, 0, -2.98023e-08, 1, 0.103628, 0.167987, 0.411711)
+mesh = SubResource("ArrayMesh_47x7b")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_mtts5")
+
+[node name="DamageDealerArea3D" parent="Lava Boulders/lava-block5/lava-block2" instance=ExtResource("35_sqmlb")]
+only_push = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Lava Boulders/lava-block5/lava-block2/DamageDealerArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.494942, 0)
+shape = SubResource("BoxShape3D_5fiio")
+
+[node name="SMOKE3" type="CPUParticles3D" parent="Lava Boulders/lava-block5"]
+transform = Transform3D(0.413456, -0.203929, -0.824854, 0.489218, 0.453851, -0.155903, 0.767931, -0.179335, 0.543423, -0.00640678, 0.537344, -0.150583)
+amount = 20
+lifetime = 2.0
+mesh = SubResource("BoxMesh_oi5bd")
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 2, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+scale_amount_curve = SubResource("Curve_qrjhx")
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_mdljd")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lava Boulders/lava-block5"]
+transform = Transform3D(0.714167, -6.14673e-08, 0, -3.72529e-09, 0.377718, -4.28408e-08, 2.98023e-08, -1.11759e-08, 0.714167, -0.370007, 0.754559, -0.294405)
+light_color = Color(1, 0.416667, 0, 1)
+light_energy = 7.273
+omni_range = 7.72416
+
+[node name="lava-block7" parent="Lava Boulders" instance=ExtResource("27_a4v80")]
+transform = Transform3D(0.356431, 0.960162, 1.25528, -0.473231, 2.38782, -0.376536, -1.26872, -0.620907, 0.493101, 52.3628, -1.89032, -14.4207)
+
+[node name="lava-block2" type="Node3D" parent="Lava Boulders/lava-block7"]
+transform = Transform3D(0.822354, 0.929227, 0.286703, -0.215061, 0.860096, -0.162924, -0.397985, 0.258545, 0.907143, -0.810829, -0.00238037, -0.552579)
+
+[node name="block-grass-low-large" type="MeshInstance3D" parent="Lava Boulders/lava-block7/lava-block2"]
+transform = Transform3D(1, -2.98023e-08, 0, 7.45058e-09, 2.06066, 0, 0, -2.98023e-08, 1, 0.103628, 0.167987, 0.411711)
+mesh = SubResource("ArrayMesh_47x7b")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_mtts5")
+
+[node name="DamageDealerArea3D" parent="Lava Boulders/lava-block7/lava-block2" instance=ExtResource("35_sqmlb")]
+only_push = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Lava Boulders/lava-block7/lava-block2/DamageDealerArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.494942, 0)
+shape = SubResource("BoxShape3D_5fiio")
+
+[node name="SMOKE3" type="CPUParticles3D" parent="Lava Boulders/lava-block7"]
+transform = Transform3D(0.413456, -0.203929, -0.824854, 0.489218, 0.453851, -0.155903, 0.767931, -0.179335, 0.543423, -0.00640678, 0.537344, -0.150583)
+amount = 20
+lifetime = 2.0
+mesh = SubResource("BoxMesh_oi5bd")
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 2, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+scale_amount_curve = SubResource("Curve_qrjhx")
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_mdljd")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lava Boulders/lava-block7"]
+transform = Transform3D(0.714167, -6.14673e-08, 0, -3.72529e-09, 0.377718, -4.28408e-08, 2.98023e-08, -1.11759e-08, 0.714167, -0.370007, 0.754559, -0.294405)
+light_color = Color(1, 0.416667, 0, 1)
+light_energy = 7.273
+omni_range = 7.72416
+
+[node name="lava-block6" parent="Lava Boulders" instance=ExtResource("27_a4v80")]
+transform = Transform3D(0.511426, 1.02992, 1.18422, -0.473231, 2.38782, -0.376536, -1.21456, -0.496696, 0.645363, 20.5934, -2.00425, -30.0731)
+
+[node name="lava-block2" type="Node3D" parent="Lava Boulders/lava-block6"]
+transform = Transform3D(0.822354, 0.929227, 0.286703, -0.215061, 0.860096, -0.162924, -0.397985, 0.258545, 0.907143, -0.810829, -0.00238037, -0.552579)
+
+[node name="block-grass-low-large" type="MeshInstance3D" parent="Lava Boulders/lava-block6/lava-block2"]
+transform = Transform3D(1, -2.98023e-08, 0, 7.45058e-09, 2.06066, 0, 0, -2.98023e-08, 1, 0.103628, 0.167987, 0.411711)
+mesh = SubResource("ArrayMesh_47x7b")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_mtts5")
+
+[node name="DamageDealerArea3D" parent="Lava Boulders/lava-block6/lava-block2" instance=ExtResource("35_sqmlb")]
+only_push = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Lava Boulders/lava-block6/lava-block2/DamageDealerArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.494942, 0)
+shape = SubResource("BoxShape3D_5fiio")
+
+[node name="SMOKE3" type="CPUParticles3D" parent="Lava Boulders/lava-block6"]
+transform = Transform3D(0.413456, -0.203929, -0.824854, 0.489218, 0.453851, -0.155903, 0.767931, -0.179335, 0.543423, -0.00640678, 0.537344, -0.150583)
+amount = 20
+lifetime = 2.0
+mesh = SubResource("BoxMesh_oi5bd")
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 2, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+scale_amount_curve = SubResource("Curve_qrjhx")
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_mdljd")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lava Boulders/lava-block6"]
+transform = Transform3D(0.714167, -8.9407e-08, 5.96046e-08, -1.11759e-08, 0.377718, -3.35276e-08, 0, 3.72529e-09, 0.714167, -0.408718, 0.809194, -0.325205)
+light_color = Color(1, 0.416667, 0, 1)
+light_energy = 16.0
+shadow_enabled = true
+shadow_blur = 4.737
+omni_range = 13.847
+
 [node name="moving_object_path" parent="." node_paths=PackedStringArray("object_to_move") instance=ExtResource("6_fuduw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00491619, -0.0264959, 0.0125456)
 curve = SubResource("Curve3D_wtc3j")
@@ -1752,10 +2194,13 @@ lifetime_randomness = 0.31
 mesh = SubResource("BoxMesh_drspd")
 emission_shape = 3
 emission_box_extents = Vector3(5, 0, 2.005)
+particle_flag_rotate_y = true
 spread = 1.36
 gravity = Vector3(0, 0, 0)
 initial_velocity_min = 4.0
 initial_velocity_max = 7.0
+angular_velocity_min = -145.45
+angular_velocity_max = 189.09
 scale_amount_curve = SubResource("Curve_4ncc7")
 
 [node name="CPUParticles3D2" type="CPUParticles3D" parent="."]
@@ -1766,14 +2211,42 @@ lifetime_randomness = 0.31
 mesh = SubResource("BoxMesh_drspd")
 emission_shape = 3
 emission_box_extents = Vector3(5, 0, 2.005)
+particle_flag_rotate_y = true
 spread = 0.0
 gravity = Vector3(0, 0, 0)
 initial_velocity_min = 4.0
 initial_velocity_max = 7.0
+angular_velocity_min = -87.27
+angular_velocity_max = 130.91
 split_scale = true
 scale_curve_x = SubResource("Curve_oke8n")
 scale_curve_y = SubResource("Curve_kucwc")
 scale_curve_z = SubResource("Curve_oke8n")
+
+[node name="cube" parent="." instance=ExtResource("37_eootv")]
+transform = Transform3D(3.41087, 0, 0, 0, 3.41087, 0, 0, 0, 3.41087, 65.8162, 2.38865, 10.3345)
+
+[node name="shape-cube" parent="cube" index="0"]
+transform = Transform3D(1.28249, 0, -0.161629, 0.00762787, 1.29119, 0.0605252, 0.161449, -0.061004, 1.28106, 0.577066, 0, -0.477215)
+surface_material_override/0 = SubResource("StandardMaterial3D_u3wqr")
+
+[node name="shape-cube2" type="MeshInstance3D" parent="cube"]
+transform = Transform3D(1.60565, 0, -0.202357, 0.0436152, 0.291121, 0.346076, 0.1976, -0.0642574, 1.56791, 0.577066, 1.17567, -0.505666)
+mesh = SubResource("ArrayMesh_jmiya")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ft3tw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cube/shape-cube2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cube/shape-cube2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_16pwg")
+
+[node name="door-rotate2" parent="." instance=ExtResource("40_ugll7")]
+transform = Transform3D(2.48731, 0, -0.287747, 0, 2.5039, 0, 0.287747, 0, 2.48731, 65.6189, 2.56977, 7.74659)
+
+[node name="cube2" parent="." instance=ExtResource("37_eootv")]
+transform = Transform3D(0.773887, 0, 0, 0, 1.56149, 0, 0, 0, 0.773887, 66.5905, 6.76014, 6.85374)
 
 [connection signal="pressed" from="HUD/Control/PlayAgainButton" to="HUD" method="_on_play_again_button_pressed"]
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
@@ -1783,3 +2256,4 @@ scale_curve_z = SubResource("Curve_oke8n")
 [editable path="Player/Character"]
 [editable path="World/moving_object_path"]
 [editable path="World/moving_object_path2"]
+[editable path="cube"]

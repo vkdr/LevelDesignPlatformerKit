@@ -4,3 +4,4 @@
 
 [node name="DitherObstacle" type="Node3D"]
 script = ExtResource("1_ila2u")
+max_distance_dither = 3.0
