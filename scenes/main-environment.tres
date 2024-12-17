@@ -11,7 +11,7 @@ sky_material = SubResource("ProceduralSkyMaterial_lg8b7")
 
 [resource]
 background_mode = 1
-background_color = Color(0.0867767, 0.108712, 0.183594, 1)
+background_color = Color(0.0494753, 0.065686, 0.121069, 1)
 background_energy_multiplier = 1.51
 sky = SubResource("Sky_7bk1c")
 ambient_light_source = 3
@@ -26,6 +26,8 @@ ssao_power = 15.0
 ssao_detail = 1.0
 ssil_enabled = true
 sdfgi_enabled = true
+sdfgi_bounce_feedback = 1.99
+sdfgi_min_cell_size = 0.363086
 sdfgi_normal_bias = 1.0
 sdfgi_probe_bias = 7.05
 glow_enabled = true
