@@ -550,6 +550,9 @@ transform = Transform3D(26.729, 0, 3.68017, 0, 47.6745, 0, -3.69659, 0, 26.6103,
 [node name="rocks35" parent="World" instance=ExtResource("27_r547d")]
 transform = Transform3D(-24.8153, 0, 10.5504, 0, 47.6745, 0, -10.5974, 0, -24.7051, -27.9778, 20.1552, -28.9868)
 
+[node name="rocks63" parent="World" instance=ExtResource("27_r547d")]
+transform = Transform3D(-24.8153, 0, 10.5504, 0, 47.6745, 0, -10.5974, 0, -24.7051, -31.0431, 13.5214, -33)
+
 [node name="rocks62" parent="World" instance=ExtResource("27_r547d")]
 transform = Transform3D(18.9183, 0, -19.1552, 0, 47.6745, 0, 19.2406, 0, 18.8343, -46.0685, 34.7689, -42.351)
 
